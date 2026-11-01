@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080808" />
+  <meta name="description" content="NOVA INDIA — Made in India, for the world. Building intelligent technology, apps, creative experiences and learning for tomorrow." />
+  <title>NOVA INDIA — Made in India, For the World</title>
+  <style>
+    :root{--bg:#070707;--panel:#111111;--text:#f7f5f0;--muted:#aaa7a0;--saffron:#ff8a24;--gold:#ffc46b;--line:rgba(255,255,255,.12)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(ellipse at 78% 18%,rgba(255,138,36,.13),transparent 34%),radial-gradient(ellipse at 8% 70%,rgba(255,196,107,.06),transparent 32%),#070707}
+    a{color:inherit;text-decoration:none}
+    .grid-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+    .nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:17px clamp(18px,5vw,72px);border-bottom:1px solid rgba(255,255,255,.08);background:rgba(7,7,7,.76);backdrop-filter:blur(18px)}
+    .brand{font-weight:900;letter-spacing:.14em;font-size:1rem}.brand span{color:var(--saffron)}
+    .navlinks{display:flex;gap:24px;color:#d2d0cc;font-size:.9rem}.navlinks a:hover{color:var(--gold)}
+    .pill{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,138,36,.55);padding:10px 15px;border-radius:999px;color:#ffd4a4;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--saffron);box-shadow:0 0 14px var(--saffron)}
+    .hero{min-height:84vh;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:40px;padding:76px clamp(20px,8vw,120px) 80px;position:relative}
+    .eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.23em;font-size:.75rem;font-weight:700}
+    h1{font-size:clamp(3.2rem,8vw,7.3rem);line-height:.91;letter-spacing:-.075em;margin:22px 0 25px;font-weight:950}
+    h1 .outline{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.72)}
+    h1 .accent{color:var(--saffron);text-shadow:0 0 36px rgba(255,138,36,.22)}
+    .hero p{color:#bcb9b3;line-height:1.75;max-width:560px;font-size:1.03rem}
+    .actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:10px;padding:14px 19px;font-weight:800;font-size:.9rem;transition:transform .25s,box-shadow .25s,border-color .25s}
+    .btn:hover{transform:translateY(-3px)}
+    .btn-primary{background:linear-gradient(135deg,var(--saffron),#ffb64e);color:#1b0d02;box-shadow:0 8px 32px rgba(255,138,36,.18)}
+    .btn-secondary{border:1px solid var(--line);background:rgba(255,255,255,.035)}
+    .hero-art{min-height:390px;display:grid;place-items:center;position:relative}
+    .orbit{width:min(39vw,390px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,138,36,.25);display:grid;place-items:center;position:relative;animation:float 7s ease-in-out infinite}
+    .orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.13);border-radius:50%;inset:9%}
+    .orbit:after{inset:20%;border-color:rgba(255,138,36,.35)}
+    .core{width:42%;aspect-ratio:1;border-radius:30%;transform:rotate(45deg);background:linear-gradient(145deg,#ffcb80,#ff7a16 48%,#7a2600);box-shadow:0 0 55px rgba(255,138,36,.35),inset 0 0 30px rgba(255,255,255,.25);display:grid;place-items:center}
+    .core span{transform:rotate(-45deg);font-size:clamp(2.4rem,5vw,4rem);font-weight:950;letter-spacing:-.12em;color:#1b0c02}
+    .ring-label{position:absolute;top:8%;right:-4%;border:1px solid var(--line);background:#101010;padding:10px 13px;border-radius:8px;font-size:.7rem;letter-spacing:.12em;color:#e9e1d8}
+    .ring-label.bottom{top:auto;right:auto;left:-5%;bottom:13%}
+    .spark{position:absolute;width:5px;height:5px;background:var(--gold);border-radius:50%;box-shadow:0 0 15px var(--saffron)}
+    .s1{top:12%;left:22%}.s2{bottom:20%;right:14%}.s3{top:35%;right:4%}
+    .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:17px 0;overflow:hidden;white-space:nowrap;color:#e6a05a;letter-spacing:.18em;font-weight:800;font-size:.75rem}
+    .ticker-track{display:inline-block;min-width:200%;animation:marquee 24s linear infinite}.ticker b{color:#fff;margin:0 22px}
+    section{padding:92px clamp(20px,8vw,120px)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:35px}
+    .section-head h2{font-size:clamp(2rem,4.6vw,4rem);line-height:1;letter-spacing:-.055em;margin:12px 0 0}
+    .section-head p{color:var(--muted);max-width:420px;line-height:1.7;margin:0}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .card{min-height:260px;padding:24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));position:relative;overflow:hidden;transition:transform .3s,border-color .3s,background .3s}
+    .card:before{content:"";position:absolute;width:160px;height:160px;border-radius:50%;right:-90px;top:-90px;background:rgba(255,138,36,.12);filter:blur(3px);transition:transform .4s}
+    .card:hover{transform:translateY(-7px);border-color:rgba(255,138,36,.55);background:linear-gradient(145deg,rgba(255,138,36,.09),rgba(255,255,255,.02))}
+    .card:hover:before{transform:scale(1.6)}
+    .icon{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:rgba(255,138,36,.12);border:1px solid rgba(255,138,36,.25);font-size:1.25rem}
+    .card h3{font-size:1.2rem;margin:28px 0 10px}.card p{color:var(--muted);line-height:1.65;font-size:.9rem;margin:0 0 23px}.status{font-size:.68rem;color:var(--gold);letter-spacing:.16em;font-weight:800}
+    .vision{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:center;border:1px solid var(--line);border-radius:24px;padding:clamp(25px,5vw,55px);background:radial-gradient(ellipse at 0 0,rgba(255,138,36,.1),transparent 55%),#0d0d0d}
+    .vision-mark{font-size:clamp(4rem,11vw,9rem);font-weight:950;letter-spacing:-.12em;color:transparent;-webkit-text-stroke:1px rgba(255,138,36,.7);line-height:.9}
+    .vision h2{font-size:clamp(2rem,4vw,3.6rem);letter-spacing:-.06em;margin:0 0 17px}.vision p{color:var(--muted);line-height:1.8;margin:0}
+    .contact{display:flex;align-items:center;justify-content:space-between;gap:25px;border-top:1px solid var(--line);padding-top:35px}
+    .contact h2{font-size:clamp(2rem,5vw,4rem);letter-spacing:-.06em;margin:10px 0}
+    footer{padding:25px clamp(20px,8vw,120px);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#85817b;font-size:.78rem}
+    footer strong{color:#e6e1da;letter-spacing:.12em}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(3deg)}}
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto;padding-top:65px}.hero-art{min-height:320px}.orbit{width:min(72vw,330px)}.cards{grid-template-columns:repeat(2,1fr)}.vision{grid-template-columns:1fr}.vision-mark{font-size:5rem}.section-head{align-items:start;flex-direction:column}.navlinks{gap:13px}.navlinks a:nth-child(3){display:none}}
+    @media(max-width:560px){.nav{padding:15px 17px}.brand{font-size:.85rem}.navlinks{font-size:.78rem;gap:11px}.nav-cta{display:none}.hero{padding:60px 20px 50px}h1{font-size:clamp(3.1rem,16vw,5rem)}.hero p{font-size:.95rem}.hero-art{min-height:280px}.orbit{width:260px}.ring-label{right:0}.ring-label.bottom{left:0}section{padding:68px 20px}.cards{grid-template-columns:1fr}.card{min-height:220px}.contact{align-items:flex-start;flex-direction:column}footer{padding:22px 20px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <nav class="nav">
+    <a class="brand" href="#home">NOVA<span>INDIA</span></a>
+    <div class="navlinks"><a href="#vision">Vision</a><a href="#universe">Explore</a><a href="#contact">Contact</a></div>
+    <a class="pill nav-cta" href="#universe"><span class="dot"></span> The future starts here</a>
+  </nav>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">A new era of Indian innovation</div>
+        <h1>BUILT HERE.<br><span class="outline">MADE FOR</span><br><span class="accent">EVERYWHERE.</span></h1>
+        <p>NOVA INDIA is a vision for the next generation of technology—bringing together intelligent AI, useful apps, bold creativity and accessible learning.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#universe">Explore NOVA <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-secondary" href="#vision">Our vision <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="hero-art reveal" aria-label="Abstract glowing NOVA emblem">
+        <div class="orbit">
+          <div class="core"><span>N</span></div>
+          <div class="ring-label">INDIAN INNOVATION</div>
+          <div class="ring-label bottom">GLOBAL AMBITION</div>
+          <i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker"><div class="ticker-track">MADE IN INDIA <b>✦</b> FOR THE WORLD <b>✦</b> THINK BIG. BUILD BOLD. <b>✦</b> THE FUTURE IS OPEN <b>✦</b> MADE IN INDIA <b>✦</b> FOR THE WORLD <b>✦</b> THINK BIG. BUILD BOLD. <b>✦</b> THE FUTURE IS OPEN <b>✦</b></div></div>
+
+    <section id="universe">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">The NOVA universe</div><h2>One vision.<br>Four frontiers.</h2></div>
+        <p>We’re building toward a connected ecosystem of digital products and experiences. Explore the pillars shaping our journey.</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal"><div class="icon">✦</div><h3>NOVA AI</h3><p>Helpful intelligence designed to make ideas, information and everyday tasks easier.</p><div class="status">COMING SOON ↗</div></article>
+        <article class="card reveal"><div class="icon">▦</div><h3>NOVA Apps</h3><p>Thoughtful digital tools with clean design, useful features and a mobile-first mindset.</p><div class="status">COMING SOON ↗</div></article>
+        <article class="card reveal"><div class="icon">◈</div><h3>NOVA Studio</h3><p>Creative experiments across visuals, storytelling, media and next-generation experiences.</p><div class="status">COMING SOON ↗</div></article>
+        <article class="card reveal"><div class="icon">⌘</div><h3>NOVA Learn</h3><p>Learning resources that help curious minds build skills, confidence and new possibilities.</p><div class="status">COMING SOON ↗</div></article>
+      </div>
+    </section>
+
+    <section id="vision">
+      <div class="vision reveal">
+        <div class="vision-mark">NOVA<br>INDIA.</div>
+        <div><div class="eyebrow">Our mission</div><h2>Indian roots.<br>Universal imagination.</h2><p>Our ambition is to create technology that feels modern, meaningful and accessible—born from Indian creativity and made to connect with the world. This is the beginning, not the finish line.</p></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact reveal">
+        <div><div class="eyebrow">Follow the journey</div><h2>The future is<br><span style="color:var(--saffron)">under construction.</span></h2><p style="color:var(--muted);line-height:1.7;max-width:520px">NOVA INDIA is at the beginning of its journey. Stay tuned as new ideas become real products.</p></div>
+        <a class="btn btn-primary" href="#home">Back to top ↑</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><strong>NOVA INDIA</strong><span>MADE IN INDIA 🇮🇳 &nbsp; | &nbsp; FOR THE WORLD 🌍</span><span>© <span id="year"></span> NOVA INDIA · Built for tomorrow.</span></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(item => observer.observe(item));
+    } else {
+      items.forEach(item => item.classList.add('visible'));
+    }
+  </script>
+</body>
+</html>
