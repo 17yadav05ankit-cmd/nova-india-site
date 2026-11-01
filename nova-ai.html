@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<title>NOVA AI — NOVA INDIA</title>
+<style>
+:root{--bg:#080808;--panel:#111;--line:rgba(255,255,255,.12);--text:#f6f4ef;--muted:#a6a29b;--orange:#ff8a24;--gold:#ffc46b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(255,138,36,.12),transparent 35%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}
+header{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 22px;background:rgba(8,8,8,.85);position:sticky;top:0;backdrop-filter:blur(16px);z-index:2}
+.brand{font-weight:900;letter-spacing:.13em}.brand span{color:var(--orange)}header a{color:#ddd;text-decoration:none;font-size:.88rem}
+.wrap{max-width:900px;margin:0 auto;padding:36px 16px 24px}.intro{text-align:center;margin:10px 0 28px}.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(255,138,36,.35);color:#ffd5ac;border-radius:99px;padding:7px 12px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}.dot{width:7px;height:7px;background:var(--orange);border-radius:50%;box-shadow:0 0 12px var(--orange)}
+h1{font-size:clamp(2.6rem,8vw,5rem);letter-spacing:-.07em;line-height:.98;margin:20px 0 12px}h1 span{color:var(--orange)}.intro p{color:var(--muted);line-height:1.65;max-width:550px;margin:0 auto}
+.chat{border:1px solid var(--line);background:rgba(17,17,17,.86);border-radius:20px;overflow:hidden;box-shadow:0 20px 80px rgba(0,0,0,.25)}
+.chat-top{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line)}.avatar{width:39px;height:39px;border-radius:13px;background:linear-gradient(140deg,#ffd18e,#ff7a18);color:#1a0b00;display:grid;place-items:center;font-weight:950;font-size:1.2rem}.chat-top strong{display:block}.chat-top small{color:var(--muted)}.online{margin-left:auto;font-size:.75rem;color:#b7e8a8}
+.messages{height:min(47vh,440px);min-height:300px;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:14px}.msg{max-width:85%;padding:13px 15px;border-radius:15px;line-height:1.6;font-size:.94rem;white-space:pre-wrap;overflow-wrap:anywhere}.bot{align-self:flex-start;background:#1b1b1b;border:1px solid rgba(255,255,255,.07);border-top-left-radius:4px}.user{align-self:flex-end;background:linear-gradient(135deg,#ffb44d,#ff8a24);color:#201004;border-top-right-radius:4px;font-weight:550}.hint{font-size:.72rem;color:#89857e;padding:0 20px 14px}
+.suggestions{display:flex;gap:8px;flex-wrap:wrap;padding:0 18px 16px}.suggestion{border:1px solid var(--line);background:#151515;color:#e9e4dc;border-radius:99px;padding:9px 12px;font-size:.78rem;cursor:pointer}.suggestion:hover{border-color:var(--orange);color:var(--gold)}
+.composer{border-top:1px solid var(--line);padding:14px;display:flex;gap:10px;background:#0d0d0d}.composer input{flex:1;min-width:0;background:#171717;border:1px solid var(--line);border-radius:12px;padding:14px;color:white;font:inherit;outline:none}.composer input:focus{border-color:rgba(255,138,36,.7)}.send{border:0;border-radius:12px;padding:0 18px;background:var(--orange);color:#1b0c02;font-weight:900;cursor:pointer}.send:disabled{opacity:.5;cursor:default}
+.disclaimer{text-align:center;color:#817d76;font-size:.74rem;line-height:1.6;margin:16px auto;max-width:650px}
+footer{text-align:center;padding:20px;border-top:1px solid var(--line);color:#85817b;font-size:.76rem}footer b{color:#e7e0d8;letter-spacing:.1em}
+@media(max-width:560px){header{padding:0 15px}.wrap{padding:25px 12px}.messages{padding:14px;min-height:300px}.msg{max-width:93%}.composer{padding:10px}.send{padding:0 14px}.suggestions{padding:0 12px 14px}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="index.html">NOVA<span>INDIA</span></a><a href="index.html">← Main website</a></header>
+<main class="wrap">
+  <div class="intro">
+    <div class="badge"><i class="dot"></i> NOVA AI · DEMO</div>
+    <h1>Ideas start<br>with <span>NOVA.</span></h1>
+    <p>Your first NOVA AI chat experience. Ask a question, explore an idea, or try one of the prompts below.</p>
+  </div>
+  <section class="chat" aria-label="NOVA AI chat demo">
+    <div class="chat-top"><div class="avatar">N</div><div><strong>NOVA AI</strong><small>Made for curious minds</small></div><span class="online">● Demo active</span></div>
+    <div class="messages" id="messages" aria-live="polite">
+      <div class="msg bot">Namaste! 🙌 I'm NOVA AI — this is an early interactive demo. I can respond to a few built-in prompts for now. Real AI connection will be added in a later step.\n\nWhat would you like to explore?</div>
+    </div>
+    <div class="suggestions">
+      <button class="suggestion" data-prompt="What is NOVA INDIA?">What is NOVA INDIA?</button>
+      <button class="suggestion" data-prompt="Give me a startup idea">Startup idea</button>
+      <button class="suggestion" data-prompt="Help me learn AI">Learn AI</button>
+      <button class="suggestion" data-prompt="Tell me a fun fact">Fun fact</button>
+    </div>
+    <form class="composer" id="form"><input id="input" maxlength="500" autocomplete="off" placeholder="Message NOVA AI…" aria-label="Type your message"><button class="send" id="send" type="submit">Send ↗</button></form>
+  </section>
+  <p class="disclaimer">Prototype notice: replies are generated locally from simple demo rules. Do not enter private or sensitive information. This page is not connected to a live AI service yet.</p>
+</main>
+<footer><b>NOVA INDIA</b> &nbsp; · &nbsp; MADE IN INDIA 🇮🇳 | FOR THE WORLD 🌍</footer>
+<script>
+const form=document.getElementById('form'),input=document.getElementById('input'),messages=document.getElementById('messages'),send=document.getElementById('send');
+function add(text,who){const el=document.createElement('div');el.className='msg '+who;el.textContent=text;messages.appendChild(el);messages.scrollTop=messages.scrollHeight}
+function replyFor(q){
+ const s=q.toLowerCase();
+ if(s.includes('nova india')||s.includes('what is nova')) return 'NOVA INDIA is a technology brand concept focused on four frontiers: NOVA AI, NOVA Apps, NOVA Studio and NOVA Learn. Our vision: Made in India, for the world. 🇮🇳🌍';
+ if(s.includes('startup')||s.includes('business')||s.includes('idea')) return 'Startup idea 💡: build a simple study companion for students with topic-wise notes, short quizzes and progress tracking. Start with one subject, test it with 10 learners, then improve from their feedback.';
+ if(s.includes('learn ai')||s.includes('learn artificial')||s.includes('ai')) return 'A beginner path to AI:\\n1. Learn basic Python.\\n2. Understand data, prompts and how AI models work.\\n3. Build a tiny project, such as a study helper.\\n4. Learn API basics and keep your API key private.\\n5. Test carefully before sharing your project.';
+ if(s.includes('fun fact')||s.includes('fact')) return 'Fun fact ✨: the word “algorithm” comes from the name of the mathematician al-Khwarizmi. Algorithms are step-by-step instructions—and they power much of modern computing.';
+ if(s.includes('hello')||s.includes('hi')||s.includes('namaste')) return 'Namaste, bro! 👋 Welcome to NOVA AI. This is the first demo, and we can keep improving it step by step.';
+ if(s.includes('help')) return 'I can show demo responses about NOVA INDIA, beginner AI learning, startup ideas and a fun fact. A real AI service connection is the next technical step.';
+ return 'Thanks for trying NOVA AI! 🙌 This prototype currently uses a few built-in demo responses, so it cannot answer every question yet. In our next step, we can connect a real AI model securely through a backend—without exposing a secret API key in this webpage.';
+}
+function sendMessage(text){const q=text.trim();if(!q)return;add(q,'user');input.value='';send.disabled=true;setTimeout(()=>{add(replyFor(q),'bot');send.disabled=false;input.focus()},350)}
+form.addEventListener('submit',e=>{e.preventDefault();sendMessage(input.value)});
+document.querySelectorAll('.suggestion').forEach(b=>b.addEventListener('click',()=>sendMessage(b.dataset.prompt)));
+</script>
+</body>
+</html>
