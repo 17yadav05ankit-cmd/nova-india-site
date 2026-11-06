@@ -1,63 +1,391 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090a0b">
-<meta name="description" content="NOVA INDIA — Made in India, for the world. Explore useful AI tools, apps, creative studio tools, and learning resources.">
-<title>NOVA INDIA — Made in India, for the World</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#05070d">
+
+<title>BHARVEX | Built for the World</title>
+
+<meta name="description" content="BHARVEX - Born in India, Built for the World. Discover innovation, AI and future technology.">
+
 <style>
-:root{--bg:#08090b;--panel:#111317;--text:#f7f7f5;--muted:#a8abb3;--saffron:#ff8a24;--gold:#ffc15a;--line:#25272d}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 80% 10%,#ff8a2412,transparent 35%),radial-gradient(ellipse at 0% 55%,#ff8a2409,transparent 30%);z-index:-1}
-a{color:inherit;text-decoration:none}.nav{display:flex;align-items:center;justify-content:space-between;padding:20px clamp(20px,6vw,84px);border-bottom:1px solid #ffffff12;position:sticky;top:0;background:#08090be8;backdrop-filter:blur(16px);z-index:10}
-.logo{font-size:21px;font-weight:900;letter-spacing:2px}.logo span{color:var(--saffron)}.navlinks{display:flex;gap:26px;font-size:13px;color:#d0d0d0}.navlinks a:hover{color:var(--gold)}.pill{border:1px solid #ff8a2466;border-radius:999px;padding:10px 16px;color:var(--gold);font-size:12px}
-.hero{min-height:84vh;display:grid;align-content:center;justify-items:center;text-align:center;padding:90px 22px 80px;position:relative}.eyebrow{color:var(--gold);font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:800}.hero h1{font-size:clamp(48px,10vw,112px);line-height:.94;letter-spacing:-.07em;margin:24px 0;max-width:1050px}.hero h1 em{font-style:normal;color:var(--saffron)}.hero p{color:var(--muted);font-size:clamp(15px,2vw,19px);line-height:1.7;max-width:610px}.actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:14px 21px;font-weight:800;font-size:13px;transition:transform .25s,box-shadow .25s}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 36px #ff8a2425}.primary{background:linear-gradient(120deg,var(--saffron),var(--gold));color:#17100a}.secondary{border:1px solid #ffffff2c;color:#fff}.orb{position:absolute;width:240px;height:240px;border-radius:50%;border:1px solid #ff9a3530;box-shadow:inset 0 0 60px #ff8a2409,0 0 100px #ff8a2409;top:16%;right:-110px;pointer-events:none}.orb:after{content:"";position:absolute;inset:24px;border:1px dashed #ffb45b3a;border-radius:50%}
-.tricolor{height:3px;width:100%;background:linear-gradient(90deg,#ff8a24 0 33%,#f5f5f5 33% 66%,#269b62 66%)}
-section{padding:82px clamp(20px,6vw,84px)}.section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:28px}.section-head h2{font-size:clamp(30px,5vw,52px);letter-spacing:-.05em;margin:12px 0 0}.section-head p{max-width:390px;color:var(--muted);line-height:1.7;font-size:14px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{min-height:245px;background:linear-gradient(145deg,#17191e,#0e0f12);border:1px solid var(--line);border-radius:20px;padding:24px;position:relative;overflow:hidden;transition:transform .3s,border-color .3s}.card:hover{transform:translateY(-6px);border-color:#ff9b4c88}.icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#ff8a2418;color:var(--gold);font-size:24px;margin-bottom:30px}.card h3{font-size:20px;margin:0 0 10px}.card p{font-size:13px;color:var(--muted);line-height:1.7;margin:0 0 22px}.card .more{font-size:12px;color:var(--gold);font-weight:800}.number{position:absolute;right:18px;top:18px;font-size:11px;color:#737780;letter-spacing:1px}
-.manifesto{border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;background:linear-gradient(90deg,#ff8a2408,transparent,#ff8a2408)}.manifesto blockquote{font-size:clamp(26px,5vw,54px);font-weight:850;letter-spacing:-.04em;line-height:1.15;max-width:900px;margin:22px auto}.manifesto blockquote span{color:var(--saffron)}
-.contact{display:flex;justify-content:space-between;align-items:center;gap:28px;background:#111317;border:1px solid var(--line);border-radius:24px;padding:clamp(24px,5vw,48px)}.contact h2{font-size:clamp(28px,4vw,44px);margin:10px 0}.contact p{color:var(--muted);line-height:1.7;max-width:520px}
-footer{padding:26px clamp(20px,6vw,84px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:#8f929a;font-size:12px}.flagline{color:var(--gold);letter-spacing:1.4px;font-weight:800;font-size:11px}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
-@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.navlinks{gap:12px}.navlinks a:nth-child(3),.navlinks a:nth-child(4){display:none}.section-head{display:block}.contact{align-items:flex-start;flex-direction:column}}
-@media(max-width:480px){.grid{grid-template-columns:1fr}.hero{min-height:78vh}.nav{padding:16px 18px}.navlinks{display:none}.card{min-height:210px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#05070d;
+  color:white;
+  line-height:1.6;
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 7%;
+  background:#080b12;
+  border-bottom:1px solid #252a37;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:2px;
+  color:white;
+}
+
+.logo span{
+  color:#ff7a00;
+}
+
+nav a{
+  color:#ddd;
+  text-decoration:none;
+  margin-left:20px;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:#ff7a00;
+}
+
+.hero{
+  min-height:85vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:70px 20px;
+  background:
+  radial-gradient(circle at 50% 40%,#17233b 0%,#080b12 55%,#05070d 100%);
+}
+
+.badge{
+  border:1px solid #ff7a00;
+  color:#ff9a36;
+  border-radius:30px;
+  padding:8px 18px;
+  font-size:12px;
+  letter-spacing:2px;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  font-size:clamp(48px,10vw,100px);
+  font-weight:900;
+  letter-spacing:4px;
+}
+
+.hero h1 span{
+  background:linear-gradient(90deg,#ff7a00,#ffffff,#138808);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero h2{
+  color:#ff9a36;
+  font-size:clamp(17px,3vw,25px);
+  letter-spacing:3px;
+  margin:15px 0;
+}
+
+.hero p{
+  max-width:650px;
+  color:#b9c0cf;
+  margin:15px auto 30px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  background:#ff7a00;
+  color:#05070d;
+  text-decoration:none;
+  border-radius:7px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:white;
+  transform:translateY(-3px);
+}
+
+section{
+  padding:75px 8%;
+  text-align:center;
+}
+
+.section-title{
+  font-size:34px;
+  margin-bottom:15px;
+}
+
+.section-title span{
+  color:#ff7a00;
+}
+
+.subtitle{
+  color:#aab2c3;
+  max-width:650px;
+  margin:0 auto 40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.card{
+  background:#101622;
+  border:1px solid #252f40;
+  border-radius:14px;
+  padding:30px 22px;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-7px);
+  border-color:#ff7a00;
+}
+
+.icon{
+  font-size:38px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  color:#ff9a36;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#aab2c3;
+  font-size:14px;
+}
+
+.vision{
+  background:linear-gradient(120deg,#101a2a,#080b12);
+}
+
+.vision h2{
+  font-size:32px;
+  margin-bottom:20px;
+}
+
+.vision p{
+  color:#c0c8d7;
+  max-width:750px;
+  margin:auto;
+}
+
+.contact{
+  background:#0b101b;
+}
+
+footer{
+  padding:35px 15px;
+  text-align:center;
+  background:#03050a;
+  border-top:1px solid #252a37;
+  color:#9ba4b5;
+  font-size:13px;
+}
+
+footer strong{
+  color:#ff7a00;
+}
+
+@media(max-width:600px){
+  header{
+    padding:16px 5%;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+
+  nav{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    gap:8px;
+  }
+
+  nav a{
+    margin:0;
+    font-size:12px;
+  }
+
+  section{
+    padding:60px 6%;
+  }
+}
 </style>
 </head>
+
 <body>
-<nav class="nav">
-  <a class="logo" href="#home" aria-label="NOVA INDIA home">NOVA<span>INDIA</span></a>
-  <div class="navlinks"><a href="#ecosystem">Ecosystem</a><a href="#vision">Our Vision</a><a href="#contact">Contact</a></div>
-  <a class="pill" href="#ecosystem">EXPLORE NOVA ↗</a>
-</nav>
-<div class="tricolor"></div>
+
+<header>
+  <div class="logo">BHAR<span>VEX</span></div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#ecosystem">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
 <main>
+
 <section class="hero" id="home">
-  <div class="orb"></div>
-  <div class="eyebrow">A new era of digital possibility</div>
-  <h1>Ideas into <em>impact.</em><br>Made for everyone.</h1>
-  <p>One Indian-born digital ecosystem for useful AI, everyday apps, creative tools and learning experiences — built with ambition for the whole world.</p>
-  <div class="actions"><a class="btn primary" href="#ecosystem">Explore the ecosystem ↗</a><a class="btn secondary" href="#vision">Discover our vision</a></div>
-  <div class="flagline" style="margin-top:42px">MADE IN INDIA 🇮🇳 &nbsp;|&nbsp; FOR THE WORLD 🌍</div>
+
+  <div class="badge">AN INDIAN INNOVATION VISION</div>
+
+  <h1>BHAR<span>VEX</span></h1>
+
+  <h2>BORN IN INDIA | BUILT FOR THE WORLD</h2>
+
+  <p>
+    We believe in ideas that shape tomorrow.
+    Exploring technology, artificial intelligence
+    and digital innovation for a better future.
+  </p>
+
+  <a href="#ecosystem" class="btn">EXPLORE BHARVEX →</a>
+
 </section>
-<section id="ecosystem">
-  <div class="section-head reveal"><div><div class="eyebrow">The NOVA ecosystem</div><h2>Four pillars. One vision.</h2></div><p>We're building a connected digital future where technology feels useful, creative and accessible.</p></div>
+
+<section id="about">
+
+  <h2 class="section-title">ABOUT <span>BHARVEX</span></h2>
+
+  <p class="subtitle">
+    A vision to create, innovate and build technology
+    from India for the world.
+  </p>
+
   <div class="grid">
-    <article class="card reveal"><span class="number">01 / INTELLIGENCE</span><div class="icon">✳</div><h3>NOVA AI</h3><p>Practical AI experiences designed to help people think, create and get things done.</p><a class="more" href="#contact">COMING SOON ↗</a></article>
-    <article class="card reveal"><span class="number">02 / EVERYDAY</span><div class="icon">▦</div><h3>NOVA Apps</h3><p>Simple, thoughtful applications for everyday tasks, with a focus on a smooth experience.</p><a class="more" href="#contact">COMING SOON ↗</a></article>
-    <article class="card reveal"><span class="number">03 / CREATIVITY</span><div class="icon">▶</div><h3>NOVA Studio</h3><p>A creative home for digital storytelling, video concepts and next-generation content.</p><a class="more" href="#contact">COMING SOON ↗</a></article>
-    <article class="card reveal"><span class="number">04 / KNOWLEDGE</span><div class="icon">⌘</div><h3>NOVA Learn</h3><p>Learning tools and study resources that make knowledge easier to access and use.</p><a class="more" href="#contact">COMING SOON ↗</a></article>
+
+    <div class="card">
+      <div class="icon">🇮🇳</div>
+      <h3>Indian Identity</h3>
+      <p>Inspired by India's creativity, talent and ambition.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🚀</div>
+      <h3>Our Vision</h3>
+      <p>Building ideas that can make a global impact.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💡</div>
+      <h3>Innovation</h3>
+      <p>Turning creative ideas into meaningful technology.</p>
+    </div>
+
   </div>
+
 </section>
-<section class="manifesto" id="vision"><div class="eyebrow reveal">Our vision</div><blockquote class="reveal">Technology should open doors — not build walls. <span>India to the world.</span></blockquote><p class="reveal" style="color:var(--muted);max-width:650px;margin:0 auto;line-height:1.8">NOVA INDIA is an ambitious work in progress. Our goal is to make digital tools more approachable, useful and inspiring for people everywhere.</p></section>
-<section id="contact"><div class="contact reveal"><div><div class="eyebrow">Be part of the journey</div><h2>The future is being built.</h2><p>Have an idea, want to collaborate, or want to follow the journey? Get in touch and help shape what NOVA INDIA becomes.</p></div><a class="btn primary" href="mailto:hello@novaindia.example?subject=NOVA%20INDIA%20-%20Hello">Say hello ↗</a></div></section>
+
+<section id="ecosystem">
+
+  <h2 class="section-title">OUR <span>ECOSYSTEM</span></h2>
+
+  <p class="subtitle">
+    Discover the projects and possibilities of BHARVEX.
+  </p>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="icon">🤖</div>
+      <h3>BHARVEX AI</h3>
+      <p>An AI assistant designed to explore intelligent technology.</p>
+      <br>
+      <a href="nova-ai.html" class="btn">Explore AI</a>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌐</div>
+      <h3>Digital Innovation</h3>
+      <p>Creative digital experiences and future-ready ideas.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎮</div>
+      <h3>Gaming & Creativity</h3>
+      <p>Exploring interactive experiences and digital entertainment.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Future Technology</h3>
+      <p>Discovering new possibilities through technology.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="vision">
+
+  <h2>WE DON'T FOLLOW THE FUTURE.</h2>
+
+  <h2 style="color:#ff7a00;">WE BUILD IT.</h2>
+
+  <p>
+    BHARVEX is a journey of ambition, creativity
+    and innovation. One idea at a time.
+  </p>
+
+</section>
+
+<section class="contact" id="contact">
+
+  <h2 class="section-title">CONNECT WITH <span>US</span></h2>
+
+  <p class="subtitle">
+    Have an idea? Let's build something meaningful.
+  </p>
+
+  <a href="mailto:contact@bharvex.com" class="btn">
+    GET IN TOUCH
+  </a>
+
+</section>
+
 </main>
-<footer><a class="logo" href="#home" style="font-size:15px">NOVA<span>INDIA</span></a><span>© <span id="year"></span> NOVA INDIA · An independent concept</span><span>MADE IN INDIA 🇮🇳 | FOR THE WORLD 🌍</span></footer>
+
+<footer>
+
+  <strong>BHARVEX</strong><br>
+
+  BORN IN INDIA 🇮🇳 | BUILT FOR THE WORLD 🌍
+
+  <br><br>
+
+  © <span id="year"></span> BHARVEX. All rights reserved.
+
+</footer>
+
 <script>
-document.getElementById('year').textContent=new Date().getFullYear();
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.getElementById("year").textContent =
+new Date().getFullYear();
 </script>
+
 </body>
 </html>
